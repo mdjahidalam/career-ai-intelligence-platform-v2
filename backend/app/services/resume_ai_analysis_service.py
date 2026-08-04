@@ -8,6 +8,7 @@ from app.core.config import settings
 
 from app.ai.tools.dashboard_mapper import DashboardMapper
 
+
 class ResumeAIAnalysisService:
 
     MODEL_NAME = "gemini-2.5-flash"
@@ -68,14 +69,18 @@ class ResumeAIAnalysisService:
 
         db,
 
-        resume_id
-
-    )
+        resume_id )
+        print("=" * 80)
+        print(type(analysis.parsed_json["skills"]))
+        print(analysis.parsed_json["skills"])
+        print("=" * 80)
 
         if not analysis:
 
             return None
-
+        print("=" * 100)
+        print(analysis.parsed_json)
+        print("=" * 100)
         return DashboardMapper.map(
             analysis.parsed_json
         )

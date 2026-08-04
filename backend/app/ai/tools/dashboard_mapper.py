@@ -3,84 +3,51 @@ class DashboardMapper:
     @staticmethod
     def map(result: dict):
 
+        skills = result.get("skills", {})
+
+        all_skills = []
+
+        if isinstance(skills, dict):
+
+            for value in skills.values():
+
+                if isinstance(value, list):
+
+                    all_skills.extend(value)
+
         return {
 
-            "candidate":{
+            "candidate": {
 
-                "name":
+                "name": result.get(
+                    "personal_information",
+                    {}
+                ).get("name"),
 
-                    result.get(
-                        "personal_information",
-                        {}
-                    ).get(
-                        "full_name"
-                    ),
-
-                "email":
-
-                    result.get(
-                        "personal_information",
-                        {}
-                    ).get(
-                        "email"
-                    )
+                "email": result.get(
+                    "personal_information",
+                    {}
+                ).get("email")
 
             },
 
-            "summary":{
+            "summary": {
 
-                "ats_score":
+                "ats_score": result.get("ats_score"),
 
-                    result.get(
-                        "ats",
-                        {}
-                    ).get(
-                        "overall_score"
-                    ),
+                "placement_probability": result.get("placement_probability"),
 
-                "placement_probability":
+                "predicted_salary": result.get("india_salary_range"),
 
-                    result.get(
-                        "placement",
-                        {}
-                    ).get(
-                        "placement_probability"
-                    ),
+                "career": result.get(
+                    "career_profile",
+                    {}
+                ).get("primary_role"),
 
-                "predicted_salary":
-
-                    result.get(
-                        "salary",
-                        {}
-                    ).get(
-                        "predicted_salary"
-                    ),
-
-                "career":
-
-                    result.get(
-                        "career",
-                        {}
-                    ).get(
-                        "top_recommendation"
-                    ),
-
-                "interview_score":
-
-                    result.get(
-                        "interview",
-                        {}
-                    ).get(
-                        "overall_score"
-                    )
+                "interview_score": result.get("overall_readiness")
 
             },
 
-            "skills":
-
-                result.get(
-                    "skills",
-                    []
-                )[:8]
+            "skills": all_skills[:8]
 
         }
