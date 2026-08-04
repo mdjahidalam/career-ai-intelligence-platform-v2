@@ -6,6 +6,7 @@ from app.repositories.resume_ai_analysis_repository import (
 
 from app.core.config import settings
 
+from app.ai.tools.dashboard_mapper import DashboardMapper
 
 class ResumeAIAnalysisService:
 
@@ -36,3 +37,46 @@ class ResumeAIAnalysisService:
             db,
             analysis
         )
+
+    @staticmethod
+    def get_by_resume(
+        db,
+        resume_id):
+
+        return (
+            db.query(
+            ResumeAIAnalysis
+        )
+
+        .filter(
+            ResumeAIAnalysis.resume_id == resume_id
+        )
+
+        .first()
+
+    )
+
+# ------------------------------------------
+
+    @staticmethod
+    def dashboard(
+    db,
+    resume_id
+):
+
+        analysis = ResumeAIAnalysisService.get_by_resume(
+
+        db,
+
+        resume_id
+
+    )
+
+        if not analysis:
+
+            return None
+
+        return DashboardMapper.map(
+            analysis.parsed_json
+        )
+    

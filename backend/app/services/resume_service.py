@@ -49,6 +49,7 @@ class ResumeService:
     @staticmethod
     def get_all(db, user):
 
+        
         resumes = ResumeRepository.get_all_by_user(
             db,
             user.id)

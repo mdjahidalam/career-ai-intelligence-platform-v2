@@ -35,5 +35,34 @@ class Resume(Base):
     analysis = relationship(
     "ResumeAIAnalysis",
     back_populates="resume",
-    cascade="all, delete"
-)
+    uselist=False,
+    cascade="all, delete-orphan")
+
+    versions = relationship(
+    "ResumeVersion",
+    back_populates="resume",
+    cascade="all, delete-orphan"
+    )
+
+    job_matches = relationship(
+    "JobMatching",
+    back_populates="resume",
+    cascade="all, delete-orphan"
+    )
+
+    career_paths = relationship(
+    "CareerPath",
+    back_populates="resume",
+    cascade="all, delete-orphan"
+    )
+    
+    interview_sessions = relationship(
+    "InterviewSession",
+    back_populates="resume",
+    cascade="all, delete-orphan"
+    )
+    skills = relationship(
+    "Skill",
+    back_populates="resume",
+    cascade="all, delete-orphan"
+    )

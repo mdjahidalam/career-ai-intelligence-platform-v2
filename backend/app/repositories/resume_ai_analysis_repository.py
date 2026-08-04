@@ -3,7 +3,6 @@ from sqlalchemy.orm import Session
 from app.models.resume_ai_analysis import ResumeAIAnalysis
 
 
-
 class ResumeAIAnalysisRepository:
 
     @staticmethod
@@ -11,11 +10,20 @@ class ResumeAIAnalysisRepository:
         db: Session,
         analysis: ResumeAIAnalysis
     ):
-
         db.add(analysis)
-
         db.commit()
-
         db.refresh(analysis)
-
         return analysis
+
+    @staticmethod
+    def get_by_resume(
+        db: Session,
+        resume_id: int
+    ):
+        return (
+            db.query(ResumeAIAnalysis)
+            .filter(
+                ResumeAIAnalysis.resume_id == resume_id
+            )
+            .first()
+        )

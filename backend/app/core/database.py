@@ -5,12 +5,14 @@ from app.core.config import settings
 
 engine = create_engine(
     settings.DATABASE_URL,
-    echo=True
+    echo=settings.DEBUG,
+    pool_pre_ping=True
 )
 
 SessionLocal = sessionmaker(
     autocommit=False,
     autoflush=False,
+    expire_on_commit=False,
     bind=engine
 )
 
@@ -24,3 +26,4 @@ def get_db():
     finally:
         db.close()
 
+        
