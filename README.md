@@ -1,59 +1,317 @@
 # 🚀 Career AI Intelligence Platform V2
 
-> An AI-powered Career Intelligence Platform that analyzes resumes using Large Language Models (LLMs), predicts career outcomes using Artificial Neural Networks (ANN), and provides personalized career guidance through GenAI and RAG.
+An AI-powered Career Intelligence Platform that helps students and job seekers analyze resumes, predict placement chances, estimate salary, recommend careers, improve ATS score, and prepare for interviews using Large Language Models (LLMs) and Machine Learning.
 
 ---
 
-## 📌 Project Status
+# 📌 Project Status
 
-🟢 Project Started
+## ✅ Backend V1 Completed
 
-Current Version: **V2.0**
-
-Development Approach:
-- Build one feature at a time
-- Production-level architecture
-- Daily documentation
-- Daily Git commits
-
----
-
-## 🎯 Vision
-
-The goal of this project is to build an intelligent AI Career Coach that can:
-
-- Analyze resumes using LLMs
-- Calculate ATS Score
-- Improve resumes using AI
-- Predict Placement Probability
-- Predict Expected Salary
-- Perform Skill Gap Analysis
-- Recommend Career Paths
-- Recommend Companies
-- Generate Interview Questions
-- Conduct AI Mock Interviews
-- Build Personalized Learning Roadmaps
-- Provide Career Guidance using RAG
+- Authentication System
+- Resume Management
+- AI Resume Analysis
+- ATS Score Analysis
+- Placement Prediction
+- Salary Prediction
+- Career Recommendation
+- Interview Preparation
+- Resume Optimizer
+- Dashboard API
+- Download Analysis API
+- MySQL Integration
+- JWT Authentication
+- FastAPI REST APIs
 
 ---
 
-## 🛠 Tech Stack
+# 🎯 Features
 
-> This section will be updated as development progresses.
+## Authentication
 
----
-
-## 📅 Development Log
-
-### Day 1
-
-- ✅ GitHub Repository Created
-- ✅ Local Git Repository Initialized
-- ✅ README Created
+- User Registration
+- User Login
+- JWT Authentication
+- Current User Profile
 
 ---
 
-## 📌 Next Goal
+## Resume Management
 
-- Create `.gitignore`
-- Make the first Git commit
+- Upload Resume (PDF)
+- Resume Storage
+- Resume List
+- Resume Details
+- Delete Resume
+
+---
+
+## AI Resume Analysis
+
+The system automatically performs:
+
+- Resume Parsing
+- Skill Extraction
+- Education Extraction
+- Project Extraction
+- ATS Analysis
+- Placement Prediction
+- Salary Prediction
+- Career Recommendation
+- Resume Optimization
+- Interview Question Generation
+
+---
+
+## Dashboard
+
+Provides:
+
+- Candidate Information
+- ATS Score
+- Placement Probability
+- Salary Range
+- Career Recommendation
+- Interview Readiness
+- Skills Overview
+
+---
+
+## AI Agents
+
+Current AI Agents:
+
+- Resume Agent
+- ATS Agent
+- Placement Agent
+- Salary Agent
+- Career Agent
+- Interview Agent
+- Resume Optimizer Agent
+
+Upcoming:
+
+- Resume Builder Agent
+- Job Matching Agent
+
+---
+
+# 🛠 Tech Stack
+
+## Backend
+
+- Python
+- FastAPI
+- SQLAlchemy
+- Pydantic
+- JWT Authentication
+
+## Database
+
+- MySQL
+
+## AI
+
+- Google Gemini API
+- Multi-Agent Architecture
+- Prompt Engineering
+
+Future:
+
+- Local LLM (Qwen3 8B)
+
+---
+
+## Libraries
+
+- FastAPI
+- SQLAlchemy
+- Pydantic
+- Uvicorn
+- Google GenAI SDK
+- PyPDF
+- JWT
+- Passlib
+
+---
+
+# 📂 Project Structure
+
+```
+career-ai-intelligence-platform-v2/
+
+│
+
+├── backend/
+
+│   ├── app/
+
+│   │   ├── api/
+
+│   │   ├── ai/
+
+│   │   ├── core/
+
+│   │   ├── database/
+
+│   │   ├── models/
+
+│   │   ├── repositories/
+
+│   │   ├── schemas/
+
+│   │   ├── services/
+
+│   │   └── main.py
+
+│
+
+├── frontend/
+
+│
+
+└── README.md
+```
+
+---
+
+# 🤖 AI Pipeline
+
+Resume
+
+↓
+
+Resume Parser
+
+↓
+
+ATS Analysis
+
+↓
+
+Placement Prediction
+
+↓
+
+Salary Prediction
+
+↓
+
+Career Recommendation
+
+↓
+
+Interview Preparation
+
+↓
+
+Resume Optimizer
+
+↓
+
+Dashboard
+
+---
+
+# 🔐 Authentication Flow
+
+Register
+
+↓
+
+Login
+
+↓
+
+JWT Token
+
+↓
+
+Protected APIs
+
+---
+
+# 📊 Current APIs
+
+## Authentication
+
+```
+POST /auth/register
+
+POST /auth/login
+
+GET /auth/me
+```
+
+---
+
+## Resume
+
+```
+POST /resume/upload
+
+GET /resume/
+
+GET /resume/{id}
+
+POST /resume/analyze/{id}
+
+GET /resume/dashboard/{id}
+
+GET /resume/download-analysis/{id}
+
+DELETE /resume/{id}
+```
+
+---
+
+# ✅ Tested Modules
+
+- Register
+- Login
+- JWT Authentication
+- Resume Upload
+- Resume Analysis
+- Dashboard
+- Download Analysis
+- Resume Delete
+
+---
+
+# 🚀 Future Roadmap
+
+## Version 2
+
+- Local LLM (Qwen3 8B)
+- Hybrid AI (Gemini + Qwen)
+- Job Matching
+- Resume Builder
+- HTML/CSS/JavaScript Frontend
+- Admin Dashboard
+- Analytics
+- Docker Deployment
+- AWS Deployment
+
+---
+
+# 👨‍💻 Author
+
+**MD Jahid Alam**
+
+B.Tech (Data Science)
+
+AI / Machine Learning Engineer
+
+GitHub:
+
+https://github.com/mdjahidalam
+
+---
+
+# ⭐ Current Version
+
+**Backend V1 Stable**
+
+Latest Commit:
+
+Backend V1 stable release with AI resume analysis
