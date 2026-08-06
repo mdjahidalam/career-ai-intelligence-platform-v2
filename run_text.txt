@@ -1,0 +1,8 @@
+alembic revision --autogenerate -m "create resumes table"
+
+alembic upgrade head
+
+
+pip freeze > requirements.txt   
+
+python -m uvicorn app.main:app --reload

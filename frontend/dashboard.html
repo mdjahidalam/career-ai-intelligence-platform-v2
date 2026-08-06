@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+        Career AI Dashboard
+
+    </title>
+
+    <link rel="stylesheet"
+          href="css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+
+
+<body>
+
+<div class="dashboard">
+
+    <!-- ===========================
+         Sidebar
+    ============================ -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <h2>
+
+                Career AI
+
+            </h2>
+
+            <p>
+
+                Intelligence Platform
+
+            </p>
+
+        </div>
+
+        <nav>
+
+            <ul>
+
+                <li>
+
+                    <a href="#"
+
+                       id="dashboardMenu"
+
+                       class="active">
+
+                        🏠 Dashboard
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#"
+
+                       id="resumeMenu">
+
+                        📄 Resume Management
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#"
+
+                       id="reportMenu">
+
+                        🤖 AI Report
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#"
+
+                       id="profileMenu">
+
+                        👤 Profile
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#"
+
+                       id="settingsMenu">
+
+                        ⚙️ Settings
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#"
+
+                       id="logoutMenu">
+
+                        🚪 Logout
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </aside>
+
+    <!-- ===========================
+         Main Content
+    ============================ -->
+
+    <main class="main-content">
+
+        <!-- Header -->
+
+        <header class="header">
+
+            <div>
+
+                <h1>
+
+                    Dashboard
+
+                </h1>
+
+                <p>
+
+                    Welcome back,
+
+                    <span id="userName">
+
+                        Loading...
+
+                    </span>
+
+                </p>
+
+            </div>
+
+        </header>
+        <!-- ==========================================
+     Dashboard Section
+========================================== -->
+<!-- ==========================================
+     Dashboard Section
+========================================== -->
+
+<section id="dashboardSection">
+
+    <!-- Dashboard Summary -->
+
+    <div class="card-grid">
+
+        <div class="card">
+
+            <h4>ATS Score</h4>
+
+            <h2 id="atsScore">
+
+                --
+
+            </h2>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Placement</h4>
+
+            <h2 id="placementProbability">
+
+                --
+
+            </h2>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Salary</h4>
+
+            <h2 id="salaryPrediction">
+
+                --
+
+            </h2>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Career</h4>
+
+            <h2 id="careerRecommendation">
+
+                --
+
+            </h2>
+
+        </div>
+
+    </div>
+
+    <!-- Dashboard Charts -->
+
+    <div class="chart-grid">
+
+        <div class="chart-card">
+
+            <h3>
+
+                ATS Analysis
+
+            </h3>
+
+            <canvas id="atsChart">
+
+            </canvas>
+
+        </div>
+
+        <div class="chart-card">
+
+            <h3>
+
+                Resume Status
+
+            </h3>
+
+            <canvas id="statusChart">
+
+            </canvas>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     Resume Management
+========================================== -->
+
+<section
+    id="resumeSection"
+    style="display:none;">
+
+    <div class="section-header">
+
+        <h2>
+
+            Resume Management
+
+        </h2>
+
+        <button
+            id="uploadResumeButton">
+
+            + Upload Resume
+
+        </button>
+
+    </div>
+
+    <!-- Current Resume -->
+
+    <div class="current-resume">
+
+        <h3>
+
+            Current Resume
+
+        </h3>
+
+        <p>
+
+            <strong>Name :</strong>
+
+            <span id="currentResumeName">
+
+                No Resume Selected
+
+            </span>
+
+        </p>
+
+        <p>
+
+            <strong>Uploaded :</strong>
+
+            <span id="currentResumeDate">
+
+                --
+
+            </span>
+
+        </p>
+
+        <p>
+
+            <strong>Status :</strong>
+
+            <span id="currentResumeStatus">
+
+                --
+
+            </span>
+
+        </p>
+
+    </div>
+
+    <table class="resume-table">
+
+        <thead>
+
+            <tr>
+
+                <th>
+
+                    Resume
+
+                </th>
+
+                <th>
+
+                    Uploaded
+
+                </th>
+
+                <th>
+
+                    Status
+
+                </th>
+
+                <th>
+
+                    Action
+
+                </th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="resumeTableBody">
+
+        </tbody>
+
+    </table>
+
+</section>
+
+<!-- ==========================================
+     AI Report
+========================================== -->
+<section id="reportSection" class="page-section" style="display:none;">
+
+    <div class="report-header">
+
+        <div>
+
+            <h2>🤖 AI Resume Analysis Report</h2>
+
+            <p id="reportResumeName">
+
+                Resume Name
+
+            </p>
+
+        </div>
+
+        <span id="reportStatus" class="status-badge">
+
+            Uploaded
+
+        </span>
+
+    </div>
+
+    <div class="card-grid">
+
+        <div class="card">
+
+            <h4>ATS Score</h4>
+
+            <h1 id="reportATS">--</h1>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Placement</h4>
+
+            <h1 id="reportPlacement">--</h1>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Salary</h4>
+
+            <h1 id="reportSalary">--</h1>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Career</h4>
+
+            <h1 id="reportCareer">--</h1>
+
+        </div>
+
+    </div>
+
+    <div class="report-box">
+
+        <h3>🟢 Skills</h3>
+
+        <div id="reportSkills" class="skill-container"></div>
+
+    </div>
+
+    <div class="report-box">
+
+        <h3>✅ Strengths</h3>
+
+        <ul id="reportStrengths"></ul>
+
+    </div>
+
+    <div class="report-box">
+
+        <h3>⚠ Weaknesses</h3>
+
+        <ul id="reportWeaknesses"></ul>
+
+    </div>
+
+    <div class="report-box">
+
+        <h3>💡 AI Recommendations</h3>
+
+        <ul id="reportRecommendations"></ul>
+
+    </div>
+
+    <div style="margin-top:25px;text-align:right;">
+
+        <button id="downloadReportButton">
+
+            📄 Download Report
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- Settings -->
+ 
+<section id="settingsSection" class="page-section" style="display:none;">
+
+    <h2>Settings</h2>
+
+    <div class="settings-card">
+
+        <div class="setting-item">
+
+            <h3>Theme</h3>
+
+            <p>Switch between Light and Dark mode.</p>
+
+            <button id="themeButton">
+                🌙 Dark Mode
+            </button>
+
+        </div>
+
+        <div class="setting-item">
+
+            <h3>API Status</h3>
+
+            <p id="apiStatus">
+                Checking...
+            </p>
+
+        </div>
+
+        <div class="setting-item">
+
+            <h3>Application Version</h3>
+
+            <p>
+                Career AI v2.0
+            </p>
+
+        </div>
+
+        <div class="setting-item">
+
+            <h3>Logout</h3>
+
+            <button id="logoutButton">
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     Profile
+========================================== -->
+
+<section id="profileSection" class="page-section" style="display:none;">
+
+    <h2>My Profile</h2>
+
+    <div class="profile-card">
+
+        <div class="profile-header">
+
+            <div class="profile-avatar">
+
+                👤
+
+            </div>
+
+            <div>
+
+                <h3 id="profileName">
+
+                    Loading...
+
+                </h3>
+
+                <p id="profileEmail">
+
+                    Loading...
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="dashboard-grid">
+
+        <div class="card">
+
+            <h4>Total Resumes</h4>
+
+            <h2 id="totalResume">
+
+                0
+
+            </h2>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Analyzed</h4>
+
+            <h2 id="analyzedResume">
+
+                0
+
+            </h2>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Pending</h4>
+
+            <h2 id="pendingResume">
+
+                0
+
+            </h2>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+    </main>
+
+</div>
+
+<script src="js/config/api.js"></script>
+
+<script src="js/dashboard/sidebar.js"></script>
+
+<script src="js/resume/resume_list.js"></script>
+
+<script src="js/resume/upload.js"></script>
+
+<script src="js/resume/analyze.js"></script>
+
+<script src="js/resume/delete.js"></script>
+
+<script src="js/report/report.js"></script>
+
+<script src="js/report/download_report.js"></script>
+
+<script src="js/profile/profile.js"></script>
+
+<script src="js/settings/settings.js"></script>
+
+<script src="js/auth/logout.js"></script>
+
+<!-- Dashboard sabse last -->
+
+<script src="js/dashboard/charts.js"></script>
+
+<script src="js/dashboard/dashboard.js"></script>
+
+
+</body>
+
+</html>

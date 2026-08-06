@@ -70,17 +70,38 @@ class ResumeAIAnalysisService:
         db,
 
         resume_id )
-        print("=" * 80)
-        print(type(analysis.parsed_json["skills"]))
-        print(analysis.parsed_json["skills"])
-        print("=" * 80)
 
+        
         if not analysis:
 
-            return None
-        print("=" * 100)
-        print(analysis.parsed_json)
-        print("=" * 100)
+            return {
+
+            "summary": {
+
+                "ats_score": "--",
+
+                "placement_probability": "--",
+
+                "predicted_salary": "--",
+
+                "career": "--"
+
+            },
+
+            "skills": [],
+
+            "strengths": [],
+
+            "weaknesses": [],
+
+            "recommendations": [],
+
+            "status": "pending",
+
+            "message": "Resume has not been analyzed yet."
+
+        }
+        
         return DashboardMapper.map(
             analysis.parsed_json
         )

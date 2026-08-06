@@ -1,0 +1,223 @@
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:'Segoe UI',sans-serif;
+
+}
+
+body{
+
+    background:#f5f7fb;
+
+}
+
+.upload-container{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px;
+
+}
+
+.upload-card{
+
+    width:650px;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
+
+}
+
+.upload-card h1{
+
+    color:#1e293b;
+
+    margin-bottom:10px;
+
+}
+
+.upload-card p{
+
+    color:#64748b;
+
+    margin-bottom:30px;
+
+}
+
+.drop-zone{
+
+    border:3px dashed #3b82f6;
+
+    border-radius:15px;
+
+    padding:50px;
+
+    text-align:center;
+
+    transition:.3s;
+
+    cursor:pointer;
+
+    margin-bottom:25px;
+
+}
+
+.drop-zone:hover{
+
+    background:#eff6ff;
+
+}
+
+.drop-zone p{
+
+    font-size:22px;
+
+    color:#1e293b;
+
+}
+
+.drop-zone span{
+
+    display:block;
+
+    margin:20px 0;
+
+    color:#94a3b8;
+
+}
+
+#chooseFileBtn{
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    padding:14px 35px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+}
+
+#chooseFileBtn:hover{
+
+    background:#1d4ed8;
+
+}
+
+#selectedFile{
+
+    margin-top:25px;
+
+    color:#2563eb;
+
+    font-weight:bold;
+
+}
+
+#uploadBtn{
+
+    width:100%;
+
+    padding:16px;
+
+    background:#16a34a;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+}
+
+#uploadBtn:hover{
+
+    background:#15803d;
+
+}
+
+#message{
+
+    margin-top:20px;
+
+    text-align:center;
+
+    font-weight:bold;
+
+}
+
+#backBtn{
+
+    margin-top:20px;
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#e2e8f0;
+
+    cursor:pointer;
+
+}
+
+#backBtn:hover{
+
+    background:#cbd5e1;
+
+}
+
+@media(max-width:768px){
+
+.upload-card{
+
+width:100%;
+
+padding:25px;
+
+}
+
+.drop-zone{
+
+padding:30px;
+
+}
+
+.drop-zone p{
+
+font-size:18px;
+
+}
+
+}
