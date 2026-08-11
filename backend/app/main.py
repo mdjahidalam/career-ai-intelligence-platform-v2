@@ -22,7 +22,7 @@ from app.models.interview_session import InterviewSession
 from app.models.notification import Notification
 from app.models.skill import Skill
 
-
+from app.api import resume_builder
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
@@ -67,3 +67,7 @@ app.include_router(resume_router)
 # app.include_router(chat_router)
 # app.include_router(interview_router)
 # app.include_router(notification_router)
+
+app.include_router(
+    resume_builder.router
+)

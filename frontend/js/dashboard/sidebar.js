@@ -8,6 +8,8 @@ const menuItems = {
 
     resume: document.getElementById("resumeMenu"),
 
+    resumeBuilder: document.getElementById("resumeBuilderMenu"),
+
     report: document.getElementById("reportMenu"),
 
     profile: document.getElementById("profileMenu"),
@@ -81,6 +83,13 @@ menuItems.resume.addEventListener("click", function (e) {
     e.preventDefault();
 
     showSection("resume");
+
+});
+menuItems.resumeBuilder.addEventListener("click", function (e) {
+
+    e.preventDefault();
+
+    window.location.href = "resume_builder.html";
 
 });
 

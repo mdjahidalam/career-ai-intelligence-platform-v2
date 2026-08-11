@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        AI Resume Studio
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/resume_builder.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="resume-studio">
+
+
+    <!-- ==========================================
+         Header
+    =========================================== -->
+
+    <header class="studio-header">
+
+        <div class="header-left">
+
+            <button
+                type="button"
+                id="backButton"
+            >
+                ← Dashboard
+            </button>
+
+        </div>
+
+
+        <div class="header-center">
+
+            <h1>
+                AI Resume Studio
+            </h1>
+
+            <p>
+                Create a professional ATS-friendly resume
+            </p>
+
+        </div>
+
+
+        <div class="header-right">
+
+            <button
+                type="button"
+                id="generateResumeButton"
+            >
+                📄 Generate Resume
+            </button>
+
+            <button
+                type="button"
+                id="improveResumeButton"
+            >
+                ✨ Improve Resume
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ==========================================
+         Main Content
+    =========================================== -->
+
+    <main class="studio-content">
+
+
+        <!-- ======================================
+             Resume Information
+        ======================================= -->
+
+        <section class="resume-info">
+
+
+            <div class="info-card">
+
+                <span>
+                    Resume
+                </span>
+
+                <h3 id="resumeName">
+                    Loading...
+                </h3>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <span>
+                    Status
+                </span>
+
+                <h3
+                    id="resumeStatus"
+                    class="status-badge"
+                >
+                    Ready
+                </h3>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ======================================
+             Resume Preview Area
+        ======================================= -->
+
+        <section class="resume-workspace">
+
+
+            <!-- ==================================
+                 Resume Preview
+            =================================== -->
+
+            <div class="resume-left">
+
+                <div
+                    id="resumePreview"
+                    class="resume-paper"
+                >
+
+
+                    <!-- Candidate Header -->
+
+                    <section class="candidate-header">
+
+                        <h1 id="candidateName">
+                            Candidate Name
+                        </h1>
+
+                        <h2 id="candidateRole">
+                            Professional Role
+                        </h2>
+
+
+                        <div class="candidate-contact">
+
+                            <a
+                                id="candidateEmail"
+                                href="#"
+                            ></a>
+
+                            <span>|</span>
+
+                            <span id="candidatePhone"></span>
+
+                            <span>|</span>
+
+                            <span id="candidateLocation"></span>
+
+                        </div>
+
+
+                        <div class="candidate-links">
+
+                            <a
+                                id="candidateLinkedin"
+                                href="#"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                LinkedIn
+                            </a>
+
+                            <span>|</span>
+
+                            <a
+                                id="candidateGithub"
+                                href="#"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                GitHub
+                            </a>
+
+                            <span>|</span>
+
+                            <a
+                                id="candidatePortfolio"
+                                href="#"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Portfolio
+                            </a>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- ==================================
+                         Professional Summary
+                    =================================== -->
+
+                    <section
+                        id="summarySection"
+                        class="resume-section"
+                    >
+
+                        <h2>
+                            Professional Summary
+                        </h2>
+
+                        <p id="professionalSummary">
+                            Your professional summary will appear here.
+                        </p>
+
+                    </section>
+
+
+
+                    <!-- ==================================
+                         Technical Skills
+                    =================================== -->
+
+                    <section
+                        id="skillsSection"
+                        class="resume-section"
+                    >
+
+                        <h2>
+                            Technical Skills
+                        </h2>
+
+                        <div id="skillsContainer"></div>
+
+                    </section>
+
+
+
+                    <!-- ==================================
+                         Experience
+                    =================================== -->
+
+                    <section
+                        id="experienceSection"
+                        class="resume-section"
+                    >
+
+                        <h2>
+                            Experience
+                        </h2>
+
+                        <div id="experienceContainer"></div>
+
+                    </section>
+
+
+
+                    <!-- ==================================
+                         Projects
+                    =================================== -->
+
+                    <section
+                        id="projectsSection"
+                        class="resume-section"
+                    >
+
+                        <h2>
+                            Projects
+                        </h2>
+
+                        <div id="projectsContainer"></div>
+
+                    </section>
+
+
+
+                    <!-- ==================================
+                         Education
+                    =================================== -->
+
+                    <section
+                        id="educationSection"
+                        class="resume-section"
+                    >
+
+                        <h2>
+                            Education
+                        </h2>
+
+                        <div id="educationContainer"></div>
+
+                    </section>
+
+
+
+                    <!-- ==================================
+                         Certifications
+                    =================================== -->
+
+                    <section
+                        id="certificationsSection"
+                        class="resume-section"
+                    >
+
+                        <h2>
+                            Certifications
+                        </h2>
+
+                        <ul id="certificationContainer"></ul>
+
+                    </section>
+
+
+
+                    <!-- ==================================
+                         Achievements
+                    =================================== -->
+
+                    <section
+                        id="achievementsSection"
+                        class="resume-section"
+                    >
+
+                        <h2>
+                            Achievements
+                        </h2>
+
+                        <ul id="achievementContainer"></ul>
+
+                    </section>
+
+
+
+                    <!-- ==================================
+                         Languages
+                    =================================== -->
+
+                    <section
+                        id="languagesSection"
+                        class="resume-section"
+                    >
+
+                        <h2>
+                            Languages
+                        </h2>
+
+                        <div id="languagesContainer"></div>
+
+                    </section>
+
+
+                </div>
+
+
+                <!-- ==================================
+                     Download Actions
+                =================================== -->
+
+                <div class="download-section">
+
+                    <button
+                        type="button"
+                        id="downloadDOCXButton"
+                    >
+                        📝 Download Word
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ======================================
+                 Right Panel
+            ======================================= -->
+
+            <aside class="resume-right">
+
+
+                <!-- AI Status -->
+
+                <div class="ai-card">
+
+                    <h3>
+                        AI Resume Assistant
+                    </h3>
+
+                    <p id="aiStatus">
+                        Your generated resume will appear here.
+                    </p>
+
+                </div>
+
+
+                <!-- Loading -->
+
+                <div
+                    id="resumeLoader"
+                    class="resume-loader"
+                    style="display: none;"
+                >
+
+                    <div class="loader"></div>
+
+                    <h3>
+                        AI is preparing your resume...
+                    </h3>
+
+                    <p>
+                        Please wait while we generate your professional resume.
+                    </p>
+
+                </div>
+
+
+                <!-- Recommendations -->
+
+                <div
+                    id="recommendationCard"
+                    class="ai-card"
+                    style="display: none;"
+                >
+
+                    <h3>
+                        AI Recommendations
+                    </h3>
+
+                    <ul id="recommendationContainer"></ul>
+
+                </div>
+
+
+            </aside>
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+
+<!-- ==========================================
+     API Configuration
+=========================================== -->
+
+<script src="js/config/api.js"></script>
+
+
+<!-- ==========================================
+     Resume Builder JavaScript
+=========================================== -->
+
+<script src="js/resume_builder.js"></script>
+
+
+</body>
+
+</html>

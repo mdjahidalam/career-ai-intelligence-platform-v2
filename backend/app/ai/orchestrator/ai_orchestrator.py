@@ -116,3 +116,43 @@ class AIOrchestrator:
         )
 
         return final_result
+
+    # ----------------------------------------
+    # Resume Optimizer
+    # ----------------------------------------
+
+    @staticmethod
+    def optimize_resume(
+        resume_json: dict
+        ):
+
+        print("Resume Optimizer Started")
+
+        optimizer = AgentFactory.resume_optimizer().run(
+        resume_json
+        )
+
+        print("Resume Optimizer Done")
+
+        return optimizer.model_dump()
+
+
+    # ----------------------------------------
+    # Resume Builder
+    # ----------------------------------------
+
+    @staticmethod
+    def build_resume(
+        resume_json: dict
+    ):
+
+        print("Resume Builder Started")
+
+        builder = AgentFactory.resume_builder().run(
+            resume_json
+        )
+
+        print("Resume Builder Done")
+
+        return builder.model_dump()
+
