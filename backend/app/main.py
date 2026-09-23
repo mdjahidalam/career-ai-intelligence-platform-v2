@@ -24,15 +24,14 @@ from app.models.skill import Skill
 
 from app.api import resume_builder
 
+from app.api.career_assistant import router as career_assistant_router
+
 app = FastAPI(
     title=settings.PROJECT_NAME,
     version=settings.PROJECT_VERSION,
     debug=settings.DEBUG,
 )
 
-Base.metadata.create_all(bind=engine)
-
-register_exception_handlers(app)
 
 app.add_middleware(
     CORSMiddleware,
@@ -46,6 +45,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+Base.metadata.create_all(bind=engine)
+
+register_exception_handlers(app)
 
 
 @app.get("/", tags=["Root"])
@@ -70,4 +73,8 @@ app.include_router(resume_router)
 
 app.include_router(
     resume_builder.router
+)
+
+app.include_router(
+    career_assistant_router
 )

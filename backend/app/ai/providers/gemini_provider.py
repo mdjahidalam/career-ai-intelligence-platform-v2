@@ -85,6 +85,33 @@ class GeminiProvider(BaseProvider):
 
         return json.loads(text)
 
+
+    # -----------------------------------
+    # Generate Text
+    # -----------------------------------
+
+    def generate_text(
+        self,
+        system_prompt: str,
+        user_prompt: str
+        ) -> str:
+
+        response = self.client.models.generate_content(
+
+        model=self.model_name,
+
+        contents=user_prompt,
+
+        config=types.GenerateContentConfig(
+            system_instruction=system_prompt,
+            temperature=0.4
+
+        )
+
+    )
+
+        return response.text
+
     # -----------------------------------
 
     def generate_stream(

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Career AI Assistant</title>
+
+    
+
+    <link
+        rel="stylesheet"
+        href="css/career_assistant.css"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="career-assistant-page">
+
+
+        <!-- ==========================================
+             Header
+             ========================================== -->
+
+        <header class="career-header">
+
+            <div class="header-left">
+
+                <a
+                    href="dashboard.html"
+                    class="back-button"
+                >
+                    ← Dashboard
+                </a>
+
+            </div>
+
+
+            <div class="career-title">
+
+                <h1>
+                    Career AI Assistant
+                </h1>
+
+                <p>
+                    Your AI assistant for learning, career and interviews
+                </p>
+
+            </div>
+
+
+            <div class="header-right"></div>
+
+        </header>
+
+
+        <!-- ==========================================
+             Main Chat Layout
+             ========================================== -->
+
+        <main class="chat-layout">
+
+
+            <!-- ======================================
+                 Chat History Sidebar
+                 ====================================== -->
+
+            <aside class="chat-history">
+
+
+                <div class="history-header">
+
+                    <h2>
+                        Chat History
+                    </h2>
+
+
+                    <button
+                        id="newChatButton"
+                        type="button"
+                    >
+                        + New Chat
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="chatHistoryList"
+                    class="chat-history-list"
+                >
+
+
+                    <!-- Today -->
+
+                    <div class="history-group">
+
+                        <div class="history-date">
+                            Today
+                        </div>
+
+
+                        <button
+                            class="history-item active"
+                            type="button"
+                        >
+                            New Conversation
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+            </aside>
+
+
+            <!-- ======================================
+                 Current Conversation
+                 ====================================== -->
+
+            <section class="chat-container">
+
+
+                <!-- Chat Messages -->
+
+                <div
+                    id="chatMessages"
+                    class="chat-messages"
+                >
+
+
+                    <!-- Initial AI Message -->
+
+                    <div class="ai-message">
+
+                        Hello! I'm your
+                        <strong>
+                            Career AI Assistant
+                        </strong>.
+
+                        <br><br>
+
+                        I can help you with:
+
+                        <ul>
+
+                            <li>
+                                Career guidance
+                            </li>
+
+                            <li>
+                                Learning and technical concepts
+                            </li>
+
+                            <li>
+                                Interview preparation
+                            </li>
+
+                            <li>
+                                Mock interviews
+                            </li>
+
+                            <li>
+                                Job preparation
+                            </li>
+
+                        </ul>
+
+                        What would you like to work on today?
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- ==================================
+                     Chat Input
+                     ================================== -->
+
+                <div class="chat-input-area">
+
+
+                    <textarea
+                        id="chatInput"
+                        placeholder="Ask anything about career, learning, interviews..."
+                        rows="1"
+                    ></textarea>
+
+
+                    <button
+                        id="sendMessageButton"
+                        type="button"
+                    >
+                        Send
+                    </button>
+
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+
+    </div>
+
+
+    <!-- ==========================================
+         JavaScript
+         ========================================== -->
+
+    <script
+    src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"
+    ></script>
+
+    <script
+        src="js/career/career_assistant.js"
+    ></script>
+
+
+</body>
+
+</html>
