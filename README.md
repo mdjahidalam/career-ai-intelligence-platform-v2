@@ -1,73 +1,236 @@
 # 🚀 Career AI Intelligence Platform V2
 
-> **An AI-powered career intelligence platform combining Resume Intelligence, Agentic AI, LLMs, career analytics, and personalized AI career assistance in one platform.**
-
-Career AI Intelligence Platform V2 is a full-stack AI application designed to help students and job seekers understand their resume, skills, career readiness, career direction, and improvement areas through a unified AI-powered platform.
-
-The platform combines a **FastAPI backend, MySQL database, SQLAlchemy, Alembic, JWT authentication, specialized AI agents, Google Gemini, real-time SSE streaming, AI resume generation, and an interactive web dashboard.**
+> An AI-powered Career Intelligence Platform for resume analysis, ATS evaluation, placement prediction, salary prediction, career guidance, AI career assistance, resume optimization, and AI-powered resume generation.
 
 ---
 
-## 📌 Project Overview
+# 📌 Table of Contents
 
-Students often use different platforms for:
+- [Overview](#-overview)
+- [Problem Statement](#-problem-statement)
+- [Project Objective](#-project-objective)
+- [Key Features](#-key-features)
+- [Application Walkthrough](#-application-walkthrough)
+  - [Authentication](#1-authentication)
+  - [Dashboard](#2-dashboard)
+  - [Resume Management](#3-resume-management)
+  - [AI Resume Analysis](#4-ai-resume-analysis)
+  - [AI Report](#5-ai-report)
+  - [Career AI Assistant](#6-career-ai-assistant)
+  - [Chat History](#7-chat-history)
+  - [Real-Time AI Streaming](#8-real-time-ai-streaming)
+  - [AI Resume Studio](#9-ai-resume-studio)
+  - [Profile](#10-profile)
+  - [Settings](#11-settings)
+  - [Swagger API](#12-swagger-api)
+- [AI Architecture](#-ai-architecture)
+- [AI Agents](#-ai-agents)
+- [Resume Intelligence Pipeline](#-resume-intelligence-pipeline)
+- [System Architecture](#-system-architecture)
+- [Backend Architecture](#-backend-architecture)
+- [Database Architecture](#-database-architecture)
+- [Authentication Architecture](#-authentication-architecture)
+- [Career Assistant Architecture](#-career-assistant-architecture)
+- [AI Provider Architecture](#-ai-provider-architecture)
+- [API Documentation](#-api-documentation)
+- [Project Structure](#-project-structure)
+- [Technology Stack](#-technology-stack)
+- [Installation](#-installation)
+- [Environment Variables](#-environment-variables)
+- [Database Setup](#-database-setup)
+- [Running the Project](#-running-the-project)
+- [Testing](#-testing)
+- [Security](#-security)
+- [Engineering Concepts](#-engineering-concepts)
+- [Current Implementation](#-current-implementation)
+- [Future Scope](#-future-scope)
+- [Author](#-author)
+
+---
+
+# 🎯 Overview
+
+**Career AI Intelligence Platform V2** is a full-stack AI-powered career platform designed to help students understand their career profile and make better-informed career decisions.
+
+The platform combines:
+
+- Resume Intelligence
+- ATS Analysis
+- Skill Analysis
+- Placement Prediction
+- Salary Prediction
+- Career Recommendation
+- Interview Assistance
+- AI Career Chat
+- Resume Optimization
+- AI Resume Generation
+
+into a single application.
+
+The project follows a modular architecture where the frontend communicates with a FastAPI backend through REST APIs and Server-Sent Events, while the backend manages authentication, database operations, resume processing, AI agents, and AI provider integration.
+
+---
+
+# 💡 Problem Statement
+
+Students generally use different tools for:
 
 - Resume analysis
-- ATS evaluation
-- Skill analysis
+- ATS checking
 - Career guidance
-- Placement-related insights
-- Salary-related insights
-- Resume improvement
+- Salary estimation
+- Placement preparation
 - Interview preparation
-- Career questions
+- Resume improvement
 
-**Career AI Intelligence Platform V2** brings these capabilities together into a single AI-powered career workspace.
+These tools are often disconnected from each other.
 
-The system uses a modular architecture where backend services, repositories, database models, AI agents, AI providers, and frontend components are separated.
+The goal of this project is to bring these career-related capabilities together into a single personalized platform.
 
 ---
 
-# ⭐ Key Features
+# 🎯 Project Objective
 
-## 🔐 Authentication & User Management
+The primary objectives are:
+
+1. Analyze student resumes using AI.
+2. Extract useful career information from resumes.
+3. Provide ATS-related analysis.
+4. Provide placement-related predictions.
+5. Provide salary-related predictions.
+6. Recommend suitable career directions.
+7. Provide an AI-powered career assistant.
+8. Maintain conversation history.
+9. Optimize resumes using AI.
+10. Generate resumes using AI.
+11. Provide downloadable DOCX resumes.
+12. Provide a personalized career dashboard.
+13. Build a modular backend architecture that can be extended with additional AI providers and features.
+
+---
+
+# ✨ Key Features
+
+## 🔐 Authentication
 
 - User Registration
 - User Login
 - JWT Authentication
-- OAuth2 Password Bearer
+- OAuth2 Password Flow
+- Password Hashing
 - Protected APIs
 - Current User API
-- Password Hashing
-- Secure User Context
-
----
 
 ## 📄 Resume Management
 
-Users can:
+- Resume Upload
+- Resume Storage
+- Resume Listing
+- Resume Details
+- Resume Deletion
+- Resume Analysis
+- Analysis Retrieval
+- Analysis Download
 
-- Upload resumes
-- Store resume metadata
-- View uploaded resumes
-- Delete resumes
-- Analyze resumes
-- View AI analysis
-- Download analysis reports
+## 🤖 AI Resume Intelligence
 
-### Resume Workflow
+- Resume Parsing
+- Structured Resume Information
+- Skill Extraction
+- ATS Analysis
+- Strength Analysis
+- Weakness Analysis
+- AI Recommendations
+
+## 📊 Career Intelligence
+
+- Placement Prediction
+- Salary Prediction
+- Career Recommendation
+- Interview Assistance
+- Resume Optimization
+
+## 💬 Career AI Assistant
+
+- AI Career Chat
+- Technical Questions
+- Career Questions
+- Resume Questions
+- Conversation History
+- New Conversations
+- Conversation Rename
+- Conversation Delete
+- Real-Time Streaming
+
+## ✍️ AI Resume Studio
+
+- Resume Generation
+- Resume Optimization
+- AI-assisted Resume Creation
+- DOCX Resume Download
+
+## 📊 Dashboard
+
+- ATS Score
+- Placement
+- Salary
+- Career
+- ATS Analysis
+- Resume Status
+- Career Overview
+
+---
+
+# 🖥️ Application Walkthrough
+
+The following section demonstrates how the application works from the user's perspective.
+
+---
+
+# 1️⃣ Authentication
+
+## Login
+
+![Login](login.png)
+
+The user starts by logging into the platform.
+
+The login system communicates with the FastAPI authentication API and receives a JWT access token after successful authentication.
+
+---
+
+## Registration
+
+![Registration](register.png)
+
+New users can create an account through the registration interface.
+
+The password is securely hashed before being stored in the database.
+
+---
+
+## Authentication Flow
 
 ```text
-Upload Resume
-      ↓
-Resume Text Extraction
-      ↓
-AI Resume Analysis
-      ↓
-Specialized AI Agents
-      ↓
-Result Merging
-      ↓
-AI Intelligence Report
-      ↓
-Dashboard
+User
+ │
+ ▼
+Register / Login
+ │
+ ▼
+FastAPI Auth API
+ │
+ ▼
+Validate Credentials
+ │
+ ▼
+Password Verification
+ │
+ ▼
+JWT Access Token
+ │
+ ▼
+Frontend
+ │
+ ▼
+Protected API Requests
