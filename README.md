@@ -1,317 +1,73 @@
 # 🚀 Career AI Intelligence Platform V2
 
-An AI-powered Career Intelligence Platform that helps students and job seekers analyze resumes, predict placement chances, estimate salary, recommend careers, improve ATS score, and prepare for interviews using Large Language Models (LLMs) and Machine Learning.
+> **An AI-powered career intelligence platform combining Resume Intelligence, Agentic AI, LLMs, career analytics, and personalized AI career assistance in one platform.**
+
+Career AI Intelligence Platform V2 is a full-stack AI application designed to help students and job seekers understand their resume, skills, career readiness, career direction, and improvement areas through a unified AI-powered platform.
+
+The platform combines a **FastAPI backend, MySQL database, SQLAlchemy, Alembic, JWT authentication, specialized AI agents, Google Gemini, real-time SSE streaming, AI resume generation, and an interactive web dashboard.**
 
 ---
 
-# 📌 Project Status
+## 📌 Project Overview
 
-## ✅ Backend V1 Completed
+Students often use different platforms for:
 
-- Authentication System
-- Resume Management
-- AI Resume Analysis
-- ATS Score Analysis
-- Placement Prediction
-- Salary Prediction
-- Career Recommendation
-- Interview Preparation
-- Resume Optimizer
-- Dashboard API
-- Download Analysis API
-- MySQL Integration
-- JWT Authentication
-- FastAPI REST APIs
+- Resume analysis
+- ATS evaluation
+- Skill analysis
+- Career guidance
+- Placement-related insights
+- Salary-related insights
+- Resume improvement
+- Interview preparation
+- Career questions
+
+**Career AI Intelligence Platform V2** brings these capabilities together into a single AI-powered career workspace.
+
+The system uses a modular architecture where backend services, repositories, database models, AI agents, AI providers, and frontend components are separated.
 
 ---
 
-# 🎯 Features
+# ⭐ Key Features
 
-## Authentication
+## 🔐 Authentication & User Management
 
 - User Registration
 - User Login
 - JWT Authentication
-- Current User Profile
+- OAuth2 Password Bearer
+- Protected APIs
+- Current User API
+- Password Hashing
+- Secure User Context
 
 ---
 
-## Resume Management
-
-- Upload Resume (PDF)
-- Resume Storage
-- Resume List
-- Resume Details
-- Delete Resume
-
----
-
-## AI Resume Analysis
-
-The system automatically performs:
-
-- Resume Parsing
-- Skill Extraction
-- Education Extraction
-- Project Extraction
-- ATS Analysis
-- Placement Prediction
-- Salary Prediction
-- Career Recommendation
-- Resume Optimization
-- Interview Question Generation
-
----
-
-## Dashboard
-
-Provides:
-
-- Candidate Information
-- ATS Score
-- Placement Probability
-- Salary Range
-- Career Recommendation
-- Interview Readiness
-- Skills Overview
-
----
-
-## AI Agents
-
-Current AI Agents:
-
-- Resume Agent
-- ATS Agent
-- Placement Agent
-- Salary Agent
-- Career Agent
-- Interview Agent
-- Resume Optimizer Agent
-
-Upcoming:
-
-- Resume Builder Agent
-- Job Matching Agent
-
----
-
-# 🛠 Tech Stack
-
-## Backend
-
-- Python
-- FastAPI
-- SQLAlchemy
-- Pydantic
-- JWT Authentication
-
-## Database
-
-- MySQL
-
-## AI
-
-- Google Gemini API
-- Multi-Agent Architecture
-- Prompt Engineering
-
-Future:
-
-- Local LLM (Qwen3 8B)
-
----
-
-## Libraries
-
-- FastAPI
-- SQLAlchemy
-- Pydantic
-- Uvicorn
-- Google GenAI SDK
-- PyPDF
-- JWT
-- Passlib
-
----
-
-# 📂 Project Structure
-
-```
-career-ai-intelligence-platform-v2/
-
-│
-
-├── backend/
-
-│   ├── app/
-
-│   │   ├── api/
-
-│   │   ├── ai/
-
-│   │   ├── core/
-
-│   │   ├── database/
-
-│   │   ├── models/
-
-│   │   ├── repositories/
-
-│   │   ├── schemas/
-
-│   │   ├── services/
-
-│   │   └── main.py
-
-│
-
-├── frontend/
-
-│
-
-└── README.md
-```
-
----
-
-# 🤖 AI Pipeline
-
-Resume
-
-↓
-
-Resume Parser
-
-↓
-
-ATS Analysis
-
-↓
-
-Placement Prediction
-
-↓
-
-Salary Prediction
-
-↓
-
-Career Recommendation
-
-↓
-
-Interview Preparation
-
-↓
-
-Resume Optimizer
-
-↓
-
+## 📄 Resume Management
+
+Users can:
+
+- Upload resumes
+- Store resume metadata
+- View uploaded resumes
+- Delete resumes
+- Analyze resumes
+- View AI analysis
+- Download analysis reports
+
+### Resume Workflow
+
+```text
+Upload Resume
+      ↓
+Resume Text Extraction
+      ↓
+AI Resume Analysis
+      ↓
+Specialized AI Agents
+      ↓
+Result Merging
+      ↓
+AI Intelligence Report
+      ↓
 Dashboard
-
----
-
-# 🔐 Authentication Flow
-
-Register
-
-↓
-
-Login
-
-↓
-
-JWT Token
-
-↓
-
-Protected APIs
-
----
-
-# 📊 Current APIs
-
-## Authentication
-
-```
-POST /auth/register
-
-POST /auth/login
-
-GET /auth/me
-```
-
----
-
-## Resume
-
-```
-POST /resume/upload
-
-GET /resume/
-
-GET /resume/{id}
-
-POST /resume/analyze/{id}
-
-GET /resume/dashboard/{id}
-
-GET /resume/download-analysis/{id}
-
-DELETE /resume/{id}
-```
-
----
-
-# ✅ Tested Modules
-
-- Register
-- Login
-- JWT Authentication
-- Resume Upload
-- Resume Analysis
-- Dashboard
-- Download Analysis
-- Resume Delete
-
----
-
-# 🚀 Future Roadmap
-
-## Version 2
-
-- Local LLM (Qwen3 8B)
-- Hybrid AI (Gemini + Qwen)
-- Job Matching
-- Resume Builder
-- HTML/CSS/JavaScript Frontend
-- Admin Dashboard
-- Analytics
-- Docker Deployment
-- AWS Deployment
-
----
-
-# 👨‍💻 Author
-
-**MD Jahid Alam**
-
-B.Tech (Data Science)
-
-AI / Machine Learning Engineer
-
-GitHub:
-
-https://github.com/mdjahidalam
-
----
-
-# ⭐ Current Version
-
-**Backend V1 Stable**
-
-Latest Commit:
-
-Backend V1 stable release with AI resume analysis
